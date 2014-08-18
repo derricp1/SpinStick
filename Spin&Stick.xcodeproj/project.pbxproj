@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F7191FF19A15B5A00305AE3 /* SASMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7191FE19A15B5A00305AE3 /* SASMainScene.m */; };
+		8F71920219A15C4000305AE3 /* SASBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F71920119A15C4000305AE3 /* SASBlock.m */; };
+		8F71921419A1A66300305AE3 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920319A1A66300305AE3 /* 2.png */; };
+		8F71921519A1A66300305AE3 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920419A1A66300305AE3 /* 3.png */; };
+		8F71921619A1A66300305AE3 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920519A1A66300305AE3 /* 4.png */; };
+		8F71921719A1A66300305AE3 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920619A1A66300305AE3 /* 5.png */; };
+		8F71921819A1A66300305AE3 /* bang.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920719A1A66300305AE3 /* bang.png */; };
+		8F71921919A1A66300305AE3 /* color_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920819A1A66300305AE3 /* color_1.png */; };
+		8F71921A19A1A66300305AE3 /* color_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920919A1A66300305AE3 /* color_2.png */; };
+		8F71921B19A1A66300305AE3 /* color_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920A19A1A66300305AE3 /* color_3.png */; };
+		8F71921C19A1A66300305AE3 /* color_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920B19A1A66300305AE3 /* color_4.png */; };
+		8F71921D19A1A66300305AE3 /* color_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920C19A1A66300305AE3 /* color_5.png */; };
+		8F71921E19A1A66300305AE3 /* color_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920D19A1A66300305AE3 /* color_6.png */; };
+		8F71921F19A1A66300305AE3 /* color_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920E19A1A66300305AE3 /* color_7.png */; };
+		8F71922019A1A66300305AE3 /* color_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920F19A1A66300305AE3 /* color_8.png */; };
+		8F71922119A1A66300305AE3 /* dir_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71921019A1A66300305AE3 /* dir_1.png */; };
+		8F71922219A1A66300305AE3 /* dir_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71921119A1A66300305AE3 /* dir_2.png */; };
+		8F71922319A1A66300305AE3 /* dir_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71921219A1A66300305AE3 /* dir_3.png */; };
+		8F71922419A1A66300305AE3 /* dir_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71921319A1A66300305AE3 /* dir_4.png */; };
 		8FA03B13199D9E680042DE2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA03B12199D9E680042DE2D /* Foundation.framework */; };
 		8FA03B15199D9E680042DE2D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA03B14199D9E680042DE2D /* CoreGraphics.framework */; };
 		8FA03B17199D9E680042DE2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA03B16199D9E680042DE2D /* UIKit.framework */; };
@@ -16,14 +35,13 @@
 		8FA03B25199D9E680042DE2D /* SASAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03B24199D9E680042DE2D /* SASAppDelegate.m */; };
 		8FA03B28199D9E680042DE2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA03B26199D9E680042DE2D /* Main.storyboard */; };
 		8FA03B2B199D9E680042DE2D /* SASViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03B2A199D9E680042DE2D /* SASViewController.m */; };
-		8FA03B2E199D9E680042DE2D /* SASMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03B2D199D9E680042DE2D /* SASMyScene.m */; };
-		8FA03B30199D9E680042DE2D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA03B2F199D9E680042DE2D /* Spaceship.png */; };
 		8FA03B32199D9E680042DE2D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FA03B31199D9E680042DE2D /* Images.xcassets */; };
 		8FA03B39199D9E680042DE2D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA03B38199D9E680042DE2D /* XCTest.framework */; };
 		8FA03B3A199D9E680042DE2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA03B12199D9E680042DE2D /* Foundation.framework */; };
 		8FA03B3B199D9E680042DE2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA03B16199D9E680042DE2D /* UIKit.framework */; };
 		8FA03B43199D9E680042DE2D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FA03B41199D9E680042DE2D /* InfoPlist.strings */; };
 		8FA03B45199D9E680042DE2D /* Spin_StickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03B44199D9E680042DE2D /* Spin_StickTests.m */; };
+		8FB92320199DA52E009C6F58 /* SASMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB9231F199DA52E009C6F58 /* SASMenuScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +55,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F7191FD19A15B5A00305AE3 /* SASMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SASMainScene.h; path = ../SASMainScene.h; sourceTree = "<group>"; };
+		8F7191FE19A15B5A00305AE3 /* SASMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SASMainScene.m; path = ../SASMainScene.m; sourceTree = "<group>"; };
+		8F71920019A15C4000305AE3 /* SASBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASBlock.h; sourceTree = "<group>"; };
+		8F71920119A15C4000305AE3 /* SASBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASBlock.m; sourceTree = "<group>"; };
+		8F71920319A1A66300305AE3 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		8F71920419A1A66300305AE3 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		8F71920519A1A66300305AE3 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		8F71920619A1A66300305AE3 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		8F71920719A1A66300305AE3 /* bang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bang.png; sourceTree = "<group>"; };
+		8F71920819A1A66300305AE3 /* color_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_1.png; sourceTree = "<group>"; };
+		8F71920919A1A66300305AE3 /* color_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_2.png; sourceTree = "<group>"; };
+		8F71920A19A1A66300305AE3 /* color_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_3.png; sourceTree = "<group>"; };
+		8F71920B19A1A66300305AE3 /* color_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_4.png; sourceTree = "<group>"; };
+		8F71920C19A1A66300305AE3 /* color_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_5.png; sourceTree = "<group>"; };
+		8F71920D19A1A66300305AE3 /* color_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_6.png; sourceTree = "<group>"; };
+		8F71920E19A1A66300305AE3 /* color_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_7.png; sourceTree = "<group>"; };
+		8F71920F19A1A66300305AE3 /* color_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_8.png; sourceTree = "<group>"; };
+		8F71921019A1A66300305AE3 /* dir_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dir_1.png; sourceTree = "<group>"; };
+		8F71921119A1A66300305AE3 /* dir_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dir_2.png; sourceTree = "<group>"; };
+		8F71921219A1A66300305AE3 /* dir_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dir_3.png; sourceTree = "<group>"; };
+		8F71921319A1A66300305AE3 /* dir_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dir_4.png; sourceTree = "<group>"; };
 		8FA03B0F199D9E680042DE2D /* Spin&Stick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spin&Stick.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA03B12199D9E680042DE2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8FA03B14199D9E680042DE2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,15 +90,14 @@
 		8FA03B27199D9E680042DE2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FA03B29199D9E680042DE2D /* SASViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SASViewController.h; sourceTree = "<group>"; };
 		8FA03B2A199D9E680042DE2D /* SASViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SASViewController.m; sourceTree = "<group>"; };
-		8FA03B2C199D9E680042DE2D /* SASMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SASMyScene.h; sourceTree = "<group>"; };
-		8FA03B2D199D9E680042DE2D /* SASMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SASMyScene.m; sourceTree = "<group>"; };
-		8FA03B2F199D9E680042DE2D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		8FA03B31199D9E680042DE2D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8FA03B37199D9E680042DE2D /* Spin&StickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spin&StickTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA03B38199D9E680042DE2D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8FA03B40199D9E680042DE2D /* Spin&StickTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Spin&StickTests-Info.plist"; sourceTree = "<group>"; };
 		8FA03B42199D9E680042DE2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8FA03B44199D9E680042DE2D /* Spin_StickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Spin_StickTests.m; sourceTree = "<group>"; };
+		8FB9231E199DA52E009C6F58 /* SASMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASMenuScene.h; sourceTree = "<group>"; };
+		8FB9231F199DA52E009C6F58 /* SASMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASMenuScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,15 +159,35 @@
 		8FA03B1A199D9E680042DE2D /* Spin&Stick */ = {
 			isa = PBXGroup;
 			children = (
+				8F7191FD19A15B5A00305AE3 /* SASMainScene.h */,
+				8F7191FE19A15B5A00305AE3 /* SASMainScene.m */,
 				8FA03B23199D9E680042DE2D /* SASAppDelegate.h */,
 				8FA03B24199D9E680042DE2D /* SASAppDelegate.m */,
 				8FA03B26199D9E680042DE2D /* Main.storyboard */,
 				8FA03B29199D9E680042DE2D /* SASViewController.h */,
 				8FA03B2A199D9E680042DE2D /* SASViewController.m */,
-				8FA03B2C199D9E680042DE2D /* SASMyScene.h */,
-				8FA03B2D199D9E680042DE2D /* SASMyScene.m */,
-				8FA03B2F199D9E680042DE2D /* Spaceship.png */,
+				8FB9231E199DA52E009C6F58 /* SASMenuScene.h */,
+				8FB9231F199DA52E009C6F58 /* SASMenuScene.m */,
+				8F71920019A15C4000305AE3 /* SASBlock.h */,
+				8F71920119A15C4000305AE3 /* SASBlock.m */,
 				8FA03B31199D9E680042DE2D /* Images.xcassets */,
+				8F71920319A1A66300305AE3 /* 2.png */,
+				8F71920419A1A66300305AE3 /* 3.png */,
+				8F71920519A1A66300305AE3 /* 4.png */,
+				8F71920619A1A66300305AE3 /* 5.png */,
+				8F71920719A1A66300305AE3 /* bang.png */,
+				8F71920819A1A66300305AE3 /* color_1.png */,
+				8F71920919A1A66300305AE3 /* color_2.png */,
+				8F71920A19A1A66300305AE3 /* color_3.png */,
+				8F71920B19A1A66300305AE3 /* color_4.png */,
+				8F71920C19A1A66300305AE3 /* color_5.png */,
+				8F71920D19A1A66300305AE3 /* color_6.png */,
+				8F71920E19A1A66300305AE3 /* color_7.png */,
+				8F71920F19A1A66300305AE3 /* color_8.png */,
+				8F71921019A1A66300305AE3 /* dir_1.png */,
+				8F71921119A1A66300305AE3 /* dir_2.png */,
+				8F71921219A1A66300305AE3 /* dir_3.png */,
+				8F71921319A1A66300305AE3 /* dir_4.png */,
 				8FA03B1B199D9E680042DE2D /* Supporting Files */,
 			);
 			path = "Spin&Stick";
@@ -241,9 +299,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F71921C19A1A66300305AE3 /* color_4.png in Resources */,
+				8F71921619A1A66300305AE3 /* 4.png in Resources */,
+				8F71921E19A1A66300305AE3 /* color_6.png in Resources */,
+				8F71921F19A1A66300305AE3 /* color_7.png in Resources */,
+				8F71922019A1A66300305AE3 /* color_8.png in Resources */,
+				8F71922119A1A66300305AE3 /* dir_1.png in Resources */,
+				8F71921519A1A66300305AE3 /* 3.png in Resources */,
+				8F71922319A1A66300305AE3 /* dir_3.png in Resources */,
+				8F71921B19A1A66300305AE3 /* color_3.png in Resources */,
 				8FA03B1F199D9E680042DE2D /* InfoPlist.strings in Resources */,
+				8F71921919A1A66300305AE3 /* color_1.png in Resources */,
+				8F71921D19A1A66300305AE3 /* color_5.png in Resources */,
+				8F71921819A1A66300305AE3 /* bang.png in Resources */,
 				8FA03B32199D9E680042DE2D /* Images.xcassets in Resources */,
-				8FA03B30199D9E680042DE2D /* Spaceship.png in Resources */,
+				8F71921719A1A66300305AE3 /* 5.png in Resources */,
+				8F71921419A1A66300305AE3 /* 2.png in Resources */,
+				8F71921A19A1A66300305AE3 /* color_2.png in Resources */,
+				8F71922219A1A66300305AE3 /* dir_2.png in Resources */,
+				8F71922419A1A66300305AE3 /* dir_4.png in Resources */,
 				8FA03B28199D9E680042DE2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,9 +338,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FA03B25199D9E680042DE2D /* SASAppDelegate.m in Sources */,
+				8F7191FF19A15B5A00305AE3 /* SASMainScene.m in Sources */,
 				8FA03B21199D9E680042DE2D /* main.m in Sources */,
-				8FA03B2E199D9E680042DE2D /* SASMyScene.m in Sources */,
 				8FA03B2B199D9E680042DE2D /* SASViewController.m in Sources */,
+				8FB92320199DA52E009C6F58 /* SASMenuScene.m in Sources */,
+				8F71920219A15C4000305AE3 /* SASBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,8 +470,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spin&Stick/Spin&Stick-Prefix.pch";
 				INFOPLIST_FILE = "Spin&Stick/Spin&Stick-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,8 +486,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spin&Stick/Spin&Stick-Prefix.pch";
 				INFOPLIST_FILE = "Spin&Stick/Spin&Stick-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -473,6 +553,7 @@
 				8FA03B4A199D9E680042DE2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FA03B4B199D9E680042DE2D /* Build configuration list for PBXNativeTarget "Spin&StickTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +562,7 @@
 				8FA03B4D199D9E680042DE2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

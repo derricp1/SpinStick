@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "SASMenuScene.h"
 
 @interface SASViewController : UIViewController
 

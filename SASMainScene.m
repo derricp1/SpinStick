@@ -25,6 +25,9 @@
     @property int maptop; //top left corner, can add half of block size
     @property NSMutableArray* blocks;
 
+    @property NSTimer* gameclock;
+    @property SKSpriteNode* gravityarrow;
+
 @end
 
 @implementation SASMainScene
@@ -39,10 +42,41 @@
     _gravity_x = 0;
     _gravity_y = 1;
     
-    _csize = MIN(_swidth, _sheight);
+    _csize = _swidth;
+    if (_sheight < _swidth) {
+        _csize = _sheight;
+    }
     _blocksize = _csize/10;
     
-    _maptop = CGRectGetMidX(self.frame) - (5*_blocksize);
+    _maptop = CGRectGetMidY(self.frame) - (5*_blocksize);
+
+    
+    if (!self.contentCreated) {
+        [self createSceneContents];
+        self.contentCreated = YES;
+    }
+}
+
+-(void)createSceneContents {
+    self.backgroundColor = [SKColor blackColor];
+    self.scaleMode = SKSceneScaleModeAspectFit;
+    //[self addChild: [self newMenuNode]];
+    
+    _gameclock = [NSTimer scheduledTimerWithTimeInterval:((1/60))
+                                                  target:self
+                                                selector:@selector(timerFired:)
+                                                userInfo:nil
+                                                 repeats:YES];
+    
+    _gravityarrow = [SKSpriteNode spriteNodeWithImageNamed:@"arrow.png"];
+    _gravityarrow.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)*1.85);
+    
+    _gravityarrow.xScale = 1.5*_blocksize/100;
+    _gravityarrow.yScale = 1.5*_blocksize/100;
+    
+    [self addChild:_gravityarrow];
+    
+    //MAKE BLOCKS
     
     _blocks = [[NSMutableArray alloc] initWithCapacity:10];
     for (int i=0;i<10;i++) {
@@ -59,14 +93,26 @@
             SASBlock* s = _blocks[i][j];
             
             s.visible = NO;
-            s.color = MIN(8,floor(rand()*MIN(8,_level+3)) + 1);
-            s.hitsleft = MIN(5,floor(rand()*MIN(5,_level)) + 1);
-            s.rotation = floor(rand()*12);
+            
+            int rseed = _level + 3;
+            if (rseed > 8) {
+                rseed = 8;
+            }
+            s.color = arc4random_uniform(rseed) + 1;
+            
+            rseed = _level;
+            if (rseed > 5) {
+                rseed = 5;
+            }
+            s.hitsleft = arc4random_uniform(rseed);
+
+            
+            s.rotation = arc4random_uniform(12);
             if (s.rotation > 4) {
                 s.rotation = 0;
             }
             
-            if (i > 5) {
+            if (i < 5) {
                 s.visible = YES;
             }
             
@@ -77,46 +123,75 @@
             ttstring = [ttstring stringByAppendingString:@".png"];
             
             SKSpriteNode* fullnode = [SKSpriteNode spriteNodeWithImageNamed:ttstring];
-            fullnode.xScale = _csize/100;
-            fullnode.yScale = _csize/100;
-            
-            SKAction *flash = [SKAction sequence:@[
-                                                   [SKAction fadeOutWithDuration:0.1],
-                                                   [SKAction fadeInWithDuration:0.1]]];
-            [fullnode runAction: [SKAction repeatActionForever:flash]];
             
             if (s.hitsleft > 1) {
                 NSString* qstring = [NSString stringWithFormat:@"%i", s.hitsleft];
                 qstring = [qstring stringByAppendingString:@".png"];
                 
                 SKSpriteNode* number = [SKSpriteNode spriteNodeWithImageNamed:qstring];
-                [number runAction: [SKAction repeatActionForever:flash]];
                 [fullnode addChild:number];
             }
             if (s.rotation > 1) {
                 NSString* qstring = @"dir_";
-                qstring = [qstring stringByAppendingString:[NSString stringWithFormat:@"%i", s.hitsleft]];
+                qstring = [qstring stringByAppendingString:[NSString stringWithFormat:@"%i", s.rotation]];
                 qstring = [qstring stringByAppendingString:@".png"];
                 
                 SKSpriteNode* rot = [SKSpriteNode spriteNodeWithImageNamed:qstring];
-                [rot runAction: [SKAction repeatActionForever:flash]];
                 [fullnode addChild:rot];
             }
             
+            fullnode.position = CGPointMake((_blocksize/2)+j*_blocksize,_maptop+(_blocksize/2)+i*_blocksize);
+            
+            fullnode.xScale = _blocksize/100;
+            fullnode.yScale = _blocksize/100;
+            
+            s.snode = fullnode;
+            
+            [self addChild:s.snode];
+            
+            if (s.visible == NO)
+                s.snode.alpha = 0;
+            else
+                s.snode.alpha = 1;
+            
             _blocks[i][j] = s;
+            
+            
         }
     }
     
-    if (!self.contentCreated) {
-        [self createSceneContents];
-        self.contentCreated = YES;
-    }
 }
 
--(void)createSceneContents {
-    self.backgroundColor = [SKColor blackColor];
-    self.scaleMode = SKSceneScaleModeAspectFit;
-    //[self addChild: [self newMenuNode]];
+-(void)timerFired:(NSTimer*) t
+{
+    
+    if (_gravity_x == 0 && _gravity_y == 1) {
+        _gravityarrow.zRotation = 0;
+    }
+    else if (_gravity_x == 0 && _gravity_y == 0) {
+        _gravityarrow.zRotation = (3.141);
+    }
+    else if (_gravity_x == 1 && _gravity_y == 1) {
+        _gravityarrow.zRotation = (3.141/2);
+    }
+    else if (_gravity_x == 1 && _gravity_y == 0) {
+        _gravityarrow.zRotation = (-3.141/2);
+    }
+    
+    
+    for (int i=0;i<10;i++) {
+        for (int j=0;j<10;j++) {
+            SASBlock* s = _blocks[i][j];
+            
+            if (s.visible == NO)
+                s.snode.alpha = 0;
+            else
+                s.snode.alpha = 1;
+            
+            _blocks[i][j] = s;
+            
+        }
+    }
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F6AD20119A2E8940015E9A5 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6AD20019A2E8940015E9A5 /* arrow.png */; };
 		8F7191FF19A15B5A00305AE3 /* SASMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7191FE19A15B5A00305AE3 /* SASMainScene.m */; };
 		8F71920219A15C4000305AE3 /* SASBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F71920119A15C4000305AE3 /* SASBlock.m */; };
 		8F71921419A1A66300305AE3 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F71920319A1A66300305AE3 /* 2.png */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F6AD20019A2E8940015E9A5 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		8F7191FD19A15B5A00305AE3 /* SASMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SASMainScene.h; path = ../SASMainScene.h; sourceTree = "<group>"; };
 		8F7191FE19A15B5A00305AE3 /* SASMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SASMainScene.m; path = ../SASMainScene.m; sourceTree = "<group>"; };
 		8F71920019A15C4000305AE3 /* SASBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASBlock.h; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				8F7191FD19A15B5A00305AE3 /* SASMainScene.h */,
 				8F7191FE19A15B5A00305AE3 /* SASMainScene.m */,
+				8F6AD20019A2E8940015E9A5 /* arrow.png */,
 				8FA03B23199D9E680042DE2D /* SASAppDelegate.h */,
 				8FA03B24199D9E680042DE2D /* SASAppDelegate.m */,
 				8FA03B26199D9E680042DE2D /* Main.storyboard */,
@@ -318,6 +321,7 @@
 				8F71921A19A1A66300305AE3 /* color_2.png in Resources */,
 				8F71922219A1A66300305AE3 /* dir_2.png in Resources */,
 				8F71922419A1A66300305AE3 /* dir_4.png in Resources */,
+				8F6AD20119A2E8940015E9A5 /* arrow.png in Resources */,
 				8FA03B28199D9E680042DE2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

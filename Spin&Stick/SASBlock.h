@@ -15,4 +15,5 @@
     @property int rotation; //0-none, 1-4 goes clockwise
     @property BOOL visible;
     @property SKSpriteNode* snode;
+    @property int delay;
 @end

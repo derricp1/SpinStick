@@ -28,6 +28,10 @@
     @property NSTimer* gameclock;
     @property SKSpriteNode* gravityarrow;
 
+    @property SASBlock* nextblock;
+
+    @property int gamestate;
+
 @end
 
 @implementation SASMainScene
@@ -68,6 +72,14 @@
                                                 userInfo:nil
                                                  repeats:YES];
     
+    [self makegarrow];
+    [self makestartblock];
+    [self startlevel];
+   
+}
+
+-(void)makegarrow
+{
     _gravityarrow = [SKSpriteNode spriteNodeWithImageNamed:@"arrow.png"];
     _gravityarrow.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)*1.85);
     
@@ -75,6 +87,81 @@
     _gravityarrow.yScale = 1.5*_blocksize/100;
     
     [self addChild:_gravityarrow];
+}
+
+-(void)makestartblock
+{
+    SASBlock* s = [[SASBlock alloc] init];
+    
+    s.visible = NO;
+    
+    int rseed = _level + 3;
+    if (rseed > 8) {
+        rseed = 8;
+    }
+    s.color = arc4random_uniform(rseed) + 1;
+    
+    rseed = _level;
+    if (rseed > 5) {
+        rseed = 5;
+    }
+    s.hitsleft = arc4random_uniform(rseed);
+    
+    
+    s.rotation = arc4random_uniform(12);
+    if (s.rotation > 4) {
+        s.rotation = 0;
+    }
+    
+    s.visible = YES;
+    
+    s.delay = 0;
+    
+    //main node
+    NSString* ttstring = @"color_";
+    NSString* nstring = [NSString stringWithFormat:@"%i", s.color];
+    ttstring = [ttstring stringByAppendingString:nstring];
+    ttstring = [ttstring stringByAppendingString:@".png"];
+    
+    SKSpriteNode* fullnode = [SKSpriteNode spriteNodeWithImageNamed:ttstring];
+    
+    if (s.hitsleft > 1) {
+        NSString* qstring = [NSString stringWithFormat:@"%i", s.hitsleft];
+        qstring = [qstring stringByAppendingString:@".png"];
+        
+        SKSpriteNode* number = [SKSpriteNode spriteNodeWithImageNamed:qstring];
+        [fullnode addChild:number];
+    }
+    if (s.rotation > 1) {
+        NSString* qstring = @"dir_";
+        qstring = [qstring stringByAppendingString:[NSString stringWithFormat:@"%i", s.rotation]];
+        qstring = [qstring stringByAppendingString:@".png"];
+        
+        SKSpriteNode* rot = [SKSpriteNode spriteNodeWithImageNamed:qstring];
+        [fullnode addChild:rot];
+    }
+    
+    fullnode.position = CGPointMake(CGRectGetMidX(self.frame)*0.25,CGRectGetMidY(self.frame)*1.85);
+    
+    fullnode.xScale = _blocksize/100;
+    fullnode.yScale = _blocksize/100;
+    
+    s.snode = fullnode;
+    
+    [self addChild:s.snode];
+    
+    if (s.visible == NO)
+        s.snode.alpha = 0;
+    else
+        s.snode.alpha = 1;
+    
+    _nextblock = s;
+    
+}
+
+-(void)startlevel
+{
+
     
     //MAKE BLOCKS
     
@@ -86,7 +173,6 @@
         }
         [_blocks insertObject:(id)temp atIndex:i];
     }
-    
     
     for (int i=0;i<10;i++) {
         for (int j=0;j<10;j++) {
@@ -105,7 +191,7 @@
                 rseed = 5;
             }
             s.hitsleft = arc4random_uniform(rseed);
-
+            
             
             s.rotation = arc4random_uniform(12);
             if (s.rotation > 4) {
@@ -115,6 +201,8 @@
             if (i < 5) {
                 s.visible = YES;
             }
+            
+            s.delay = 0;
             
             //main node
             NSString* ttstring = @"color_";

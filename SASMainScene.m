@@ -73,7 +73,7 @@
                                                  repeats:YES];
     
     [self makegarrow];
-    [self makestartblock];
+    [self makestartblock:YES];
     [self startlevel];
    
 }
@@ -89,11 +89,9 @@
     [self addChild:_gravityarrow];
 }
 
--(void)makestartblock
+-(void)makestartblock:(BOOL) vis
 {
     SASBlock* s = [[SASBlock alloc] init];
-    
-    s.visible = NO;
     
     int rseed = _level + 3;
     if (rseed > 8) {
@@ -113,7 +111,7 @@
         s.rotation = 0;
     }
     
-    s.visible = YES;
+    s.visible = vis;
     
     s.delay = 0;
     
@@ -156,6 +154,69 @@
         s.snode.alpha = 1;
     
     _nextblock = s;
+    
+}
+
+-(void)adjuststartblock:(BOOL) vis
+{
+
+    int rseed = _level + 3;
+    if (rseed > 8) {
+        rseed = 8;
+    }
+    _nextblock.color = arc4random_uniform(rseed) + 1;
+    
+    rseed = _level;
+    if (rseed > 5) {
+        rseed = 5;
+    }
+    _nextblock.hitsleft = arc4random_uniform(rseed);
+    
+    
+    _nextblock.rotation = arc4random_uniform(12);
+    if (_nextblock.rotation > 4) {
+        _nextblock.rotation = 0;
+    }
+    
+    _nextblock.visible = vis;
+    
+    _nextblock.delay = 5;
+    
+    //main node
+    NSString* ttstring = @"color_";
+    NSString* nstring = [NSString stringWithFormat:@"%i", _nextblock.color];
+    ttstring = [ttstring stringByAppendingString:nstring];
+    ttstring = [ttstring stringByAppendingString:@".png"];
+    
+    SKSpriteNode* fullnode = [SKSpriteNode spriteNodeWithImageNamed:ttstring];
+    
+    if (_nextblock.hitsleft > 1) {
+        NSString* qstring = [NSString stringWithFormat:@"%i", _nextblock.hitsleft];
+        qstring = [qstring stringByAppendingString:@".png"];
+        
+        SKSpriteNode* number = [SKSpriteNode spriteNodeWithImageNamed:qstring];
+        [fullnode addChild:number];
+    }
+    if (_nextblock.rotation > 1) {
+        NSString* qstring = @"dir_";
+        qstring = [qstring stringByAppendingString:[NSString stringWithFormat:@"%i", _nextblock.rotation]];
+        qstring = [qstring stringByAppendingString:@".png"];
+        
+        SKSpriteNode* rot = [SKSpriteNode spriteNodeWithImageNamed:qstring];
+        [fullnode addChild:rot];
+    }
+    
+    fullnode.position = CGPointMake(CGRectGetMidX(self.frame)*0.25,CGRectGetMidY(self.frame)*1.85);
+    
+    fullnode.xScale = _blocksize/100;
+    fullnode.yScale = _blocksize/100;
+    
+    _nextblock.snode = fullnode;
+    
+    if (_nextblock.visible == NO)
+        _nextblock.snode.alpha = 0;
+    else
+        _nextblock.snode.alpha = 1;
     
 }
 
@@ -266,6 +327,10 @@
         _gravityarrow.zRotation = (-3.141/2);
     }
     
+    if (_nextblock.visible == NO)
+        _nextblock.snode.alpha = 0;
+    else
+        _nextblock.snode.alpha = 1;
     
     for (int i=0;i<10;i++) {
         for (int j=0;j<10;j++) {
@@ -278,8 +343,80 @@
             
             _blocks[i][j] = s;
             
+            if (s.delay > 0)
+                s.delay = s.delay - 1;
+            
         }
     }
+}
+
+-(void)touchesBegan:(NSSet *) touches withEvent:(UIEvent *)event
+{
+    UITouch* touch = [touches anyObject];
+    CGPoint pos = [touch locationInNode:self];
+    //_spaceship.position = CGPointMake(pos.x, pos.y);
+    
+    int column = 0;
+    for (int i=1;i<=9;i++) {
+        if (pos.x > (i*_csize)/10) {
+            column = i;
+        }
+    }
+    
+    if (_nextblock.visible == YES) {
+        
+        _nextblock.visible = NO;
+        
+        SASBlock* newblock = [[SASBlock alloc] init];
+        newblock.color = _nextblock.color;
+        newblock.rotation = _nextblock.rotation;
+        newblock.hitsleft = _nextblock.hitsleft;
+        newblock.visible = YES;
+        
+        //main node
+        NSString* ttstring = @"color_";
+        NSString* nstring = [NSString stringWithFormat:@"%i", newblock.color];
+        ttstring = [ttstring stringByAppendingString:nstring];
+        ttstring = [ttstring stringByAppendingString:@".png"];
+        
+        SKSpriteNode* fullnode = [SKSpriteNode spriteNodeWithImageNamed:ttstring];
+        
+        if (newblock.hitsleft > 1) {
+            NSString* qstring = [NSString stringWithFormat:@"%i", newblock.hitsleft];
+            qstring = [qstring stringByAppendingString:@".png"];
+            
+            SKSpriteNode* number = [SKSpriteNode spriteNodeWithImageNamed:qstring];
+            [fullnode addChild:number];
+        }
+        if (newblock.rotation > 1) {
+            NSString* qstring = @"dir_";
+            qstring = [qstring stringByAppendingString:[NSString stringWithFormat:@"%i", newblock.rotation]];
+            qstring = [qstring stringByAppendingString:@".png"];
+            
+            SKSpriteNode* rot = [SKSpriteNode spriteNodeWithImageNamed:qstring];
+            [fullnode addChild:rot];
+        }
+        
+        fullnode.position = CGPointMake((_blocksize/2)+column*_blocksize,_maptop+(_blocksize/2)+9*_blocksize);
+        
+        fullnode.xScale = _blocksize/100;
+        fullnode.yScale = _blocksize/100;
+        
+        newblock.snode = fullnode;
+        
+        [self addChild:newblock.snode];
+
+        newblock.snode.alpha = 1;
+        newblock.delay = 5;
+        
+        _blocks[9][column] = newblock;
+        
+        [self adjuststartblock:NO];
+        
+    }
+    
+    
+    
 }
 
 @end
